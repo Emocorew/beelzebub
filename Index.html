@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>~*~* O ROLÊ DO HALLOWEEN VAI SAIR?? *~*~</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000000;
+            color: #FFFFFF;
+            font-family: 'VT323', 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            background-image: 
+                url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><text y="25" font-size="20">🎃</text><text x="30" y="55" font-size="20">🦇</text></svg>'),
+                url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><text x="15" y="15" font-size="20">🦇</text><text x="45" y="40" font-size="20">🎃</text></svg>');
+            background-size: 60px 60px, 60px 60px;
+            background-repeat: repeat;
+            background-position: 0 0, 30px 30px;
+            animation: background-scroll 30s linear infinite;
+        }
+
+        @keyframes background-scroll {
+            from { background-position: 0 0, 30px 30px; }
+            to { background-position: 60px 60px, 90px 90px; }
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            margin: 20px auto;
+            border: 6px ridge #FF007F;
+            background-color: rgba(10, 0, 15, 0.9);
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 0 30px #FF00FF, 0 0 50px #FF00FF inset, 0 0 10px #FFFFFF;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .glitter {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: gold;
+            border-radius: 50%;
+            opacity: 0;
+            animation: glitter-dance 3s infinite ease-in-out;
+            box-shadow: 0 0 5px gold;
+        }
+        .glitter:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; background-color: #FFD700; }
+        .glitter:nth-child(2) { top: 80%; left: 70%; animation-delay: 0.5s; background-color: #FF69B4; }
+        .glitter:nth-child(3) { top: 30%; left: 50%; animation-delay: 1s; background-color: #9400D3; }
+        .glitter:nth-child(4) { top: 50%; left: 10%; animation-delay: 1.5s; background-color: #FFD700; }
+        .glitter:nth-child(5) { top: 60%; left: 90%; animation-delay: 2s; background-color: #FF69B4; }
+        .glitter:nth-child(6) { top: 20%; left: 85%; animation-delay: 2.5s; background-color: #9400D3; }
+        .glitter:nth-child(7) { top: 90%; left: 15%; animation-delay: 3s; background-color: #FFD700; }
+        .glitter:nth-child(8) { top: 45%; left: 35%; animation-delay: 3.5s; background-color: #FF69B4; }
+
+        @keyframes glitter-dance {
+            0% { transform: scale(0) rotate(0deg); opacity: 0; }
+            50% { transform: scale(1) rotate(180deg); opacity: 1; }
+            100% { transform: scale(0) rotate(360deg); opacity: 0; }
+        }
+
+        marquee {
+            font-size: 1.8rem;
+            color: #9400D3;
+            margin-bottom: 30px;
+            font-weight: bold;
+            text-shadow: 2px 2px 3px #FF00FF;
+            animation: marquee-glow 1.5s infinite alternate;
+        }
+
+        @keyframes marquee-glow {
+            from { text-shadow: 2px 2px 3px #FF00FF; }
+            to { text-shadow: 2px 2px 5px #FF00FF, 0 0 10px #FF00FF; }
+        }
+
+        .main-phrase {
+            font-family: 'Pacifico', cursive;
+            font-size: 4.5rem;
+            color: #FFB6C1;
+            text-shadow: 
+                0 0 12px #FF00FF, 
+                0 0 25px #FF00FF, 
+                0 0 40px #FF1493, 
+                0 0 55px #FF1493,
+                0 0 70px #FFFFFF;
+            line-height: 1.1;
+            margin-top: 40px;
+            margin-bottom: 20px; /* Diminuí a margem inferior para dar espaço ao botão */
+            animation: pulse-glow 2s infinite alternate;
+        }
+
+        @keyframes pulse-glow {
+            from { text-shadow: 0 0 12px #FF00FF, 0 0 25px #FF00FF, 0 0 40px #FF1493; }
+            to { text-shadow: 0 0 18px #FF00FF, 0 0 35px #FF00FF, 0 0 60px #FF1493, 0 0 80px #FF1493, 0 0 90px #FFFFFF; }
+        }
+
+        .blink {
+            animation: blink-animation 0.7s steps(2, start) infinite;
+        }
+
+        @keyframes blink-animation { to { visibility: hidden; } }
+
+        /* --- NOVO: Botão Call to Action --- */
+        .call-to-action-btn {
+            display: inline-block;
+            font-family: 'VT323', monospace;
+            font-size: 2rem; /* Grande! */
+            color: #FFFFFF;
+            background-color: #FF007F; /* Rosa choque */
+            border: 4px outset #FF1493;
+            padding: 10px 20px;
+            margin: 20px 0 30px 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-shadow: 2px 2px 2px #000;
+            box-shadow: 0 0 20px #FF007F, 0 0 30px #FF007F;
+            animation: pulse-button 1s infinite alternate;
+        }
+
+        @keyframes pulse-button {
+            from { transform: scale(1); box-shadow: 0 0 20px #FF007F, 0 0 30px #FF007F; }
+            to { transform: scale(1.05); box-shadow: 0 0 30px #FF00FF, 0 0 45px #FF00FF; }
+        }
+
+        .call-to-action-btn:hover {
+            background-color: #FF69B4;
+            border-style: inset;
+        }
+
+        .emo-stuff {
+            font-size: 1.4rem;
+            color: #E0E0E0;
+            margin-top: 30px; /* Ajustei a margem */
+            border-top: 2px dotted #FF007F;
+            padding-top: 25px;
+            text-shadow: 1px 1px 2px #000;
+        }
+        /* ... (resto do emo-stuff e signature) ... */
+        .emo-stuff p { margin: 10px 0; line-height: 1.6; }
+        .signature {
+            font-size: 1.1rem;
+            color: #DA70D6;
+            margin-top: 40px;
+            font-style: italic;
+            text-align: right;
+            text-shadow: 1px 1px 1px #000;
+        }
+        .corner-image {
+            position: absolute;
+            bottom: -25px;
+            left: -35px;
+            width: 120px;
+            transform: rotate(-20deg);
+            filter: drop-shadow(0 0 12px #FF00FF) brightness(1.2);
+            z-index: 2;
+        }
+
+        /* --- NOVO: Estilos do Pop-up --- */
+        .popup-overlay {
+            display: none; /* Começa escondido */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 100;
+        }
+
+        .popup-box {
+            display: none; /* Começa escondido */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 400px;
+            background-color: #1a0514;
+            border: 4px ridge #FF007F;
+            border-radius: 10px;
+            box-shadow: 0 0 50px #FF00FF;
+            padding: 20px;
+            z-index: 101;
+            text-align: center;
+        }
+
+        .popup-box h2 {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.5rem;
+            color: #FFB6C1;
+            text-shadow: 0 0 10px #FF00FF;
+            margin: 0 0 20px 0;
+        }
+
+        .popup-box p {
+            font-size: 1.5rem;
+            color: #FFFFFF;
+            margin-bottom: 25px;
+        }
+
+        .popup-close {
+            font-family: 'VT323', monospace;
+            font-size: 1.5rem;
+            color: #000;
+            background-color: #FFB6C1;
+            border: 2px outset #FF007F;
+            padding: 5px 15px;
+            cursor: pointer;
+            text-shadow: none;
+        }
+        .popup-close:hover {
+            background-color: #FF69B4;
+            border-style: inset;
+        }
+
+        /* --- NOVO: Media Query para Celular --- */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px; /* Menos padding no body */
+            }
+
+            .container {
+                width: 95%; /* Container ocupa mais espaço */
+                padding: 15px; /* Menos padding interno */
+                margin: 10px auto; /* Menos margem */
+                border-width: 4px; /* Borda mais fina */
+            }
+
+            marquee {
+                font-size: 1.3rem; /* Fonte da marquee menor */
+                margin-bottom: 20px;
+            }
+
+            .main-phrase {
+                font-size: 3rem; /* Fonte principal BEM menor */
+                line-height: 1.2;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            .call-to-action-btn {
+                font-size: 1.5rem; /* Botão menor */
+                padding: 8px 15px;
+                margin: 15px 0 25px 0;
+            }
+
+            .emo-stuff {
+                font-size: 1.1rem; /* Texto emo menor */
+                padding-top: 15px;
+                margin-top: 20px;
+            }
+
+            .signature {
+                font-size: 1rem;
+                margin-top: 20px;
+            }
+
+            .corner-image {
+                width: 80px; /* Imagem do canto menor */
+                bottom: -15px;
+                left: -20px;
+            }
+
+            /* Ajustes no Pop-up */
+            .popup-box {
+                width: 90%; /* Pop-up um pouco mais largo */
+                padding: 15px;
+            }
+
+            .popup-box h2 {
+                font-size: 2rem;
+            }
+
+            .popup-box p {
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+            }
+
+            .popup-close {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Glitter -->
+        <div class="glitter"></div><div class="glitter"></div><div class="glitter"></div><div class="glitter"></div>
+        <div class="glitter"></div><div class="glitter"></div><div class="glitter"></div><div class="glitter"></div>
+
+        <!-- Imagem -->
+        <img src="https://i.imgur.com/kP12Q0x.png" alt="Caveira Fofa Emo" class="corner-image"> 
+
+        <!-- Marquees -->
+        <marquee scrollamount="8" direction="right">
+            ~*~*~ o.O cAdÊ o RoLê??? o.O ~*~*~ mEu cOtUrNo tÁ cHoRaNdO x_x ~*~*~
+        </marquee>
+        <marquee scrollamount="8" direction="left">
+            >.< eU nÃo AgUeNtO mAiS eSpErAr >.< vAmOs PrOcUrAr!!! >.<
+        </marquee>
+
+        <!-- Frase Principal -->
+        <h1 class="main-phrase">
+            aiai q vontade de ir numa festa de halloween 
+            <span class="blink">🎃</span>
+            <span class="blink">🦇</span>
+            <span class="blink">💖</span>
+            <span class="blink">✨</span>
+        </h1>
+
+        <!-- NOVO: Botão Call to Action -->
+        <a href="#" class="call-to-action-btn" id="openPopupBtn">
+            !!! JÁ ACHOU O ROLÊ ??? !!!
+        </a>
+
+        <!-- Conteúdo Emo -->
+        <div class="emo-stuff">
+            <p>Tipo... sério... meu coração <span class="blink">&lt;3</span> não aguenta mais de emoção por um rolê de Halloween!</p>
+            <p>Se a gente não for, eu vou chorar um rio de lágrimas pretas... e fantasmas vão me assombrar pra sempre... <span class="blink">T_T</span></p>
+            <p>Por favor... por favor... por favor... <span class="blink">🙏</span></p>
+            <p>#PartiuHalloween #AmigoSeuFofo #EncontraEsseRolêAGORA</p>
+        </div>
+
+        <p class="signature">
+            xoxo, sua BFF mais gótica suave ;) <span class="blink">💀</span>
+        </p>
+
+    </div>
+
+    <!-- NOVO: Estrutura do Pop-up -->
+    <div class="popup-overlay" id="popupOverlay"></div>
+    <div class="popup-box" id="popupBox">
+        <h2>o.O E AÍ??? O.o</h2>
+        <p>...Ainda tô esperando, tá? <span class="blink">👀</span></p>
+        <p>Vai procurar logooooo! x.x</p>
+        <button class="popup-close" id="closePopupBtn">fechar (T_T)</button>
+    </div>
+
+    <!-- NOVO: JavaScript para o Pop-up -->
+    <script>
+        // Seleciona os elementos do DOM
+        const openBtn = document.getElementById('openPopupBtn');
+        const closeBtn = document.getElementById('closePopupBtn');
+        const overlay = document.getElementById('popupOverlay');
+        const popup = document.getElementById('popupBox');
+
+        // Função para abrir o popup
+        function openPopup(event) {
+            event.preventDefault(); // Impede o link de pular para o topo
+            overlay.style.display = 'block';
+            popup.style.display = 'block';
+        }
+
+        // Função para fechar o popup
+        function closePopup() {
+            overlay.style.display = 'none';
+            popup.style.display = 'none';
+        }
+
+        // Adiciona os ouvintes de evento
+        openBtn.addEventListener('click', openPopup);
+        closeBtn.addEventListener('click', closePopup);
+        overlay.addEventListener('click', closePopup); // Fecha também se clicar fora
+    </script>
+
+</body>
+</html>
+
+
